@@ -48,5 +48,5 @@ The [Releases](https://github.com/unpins/pv/releases) page has standalone binari
 ## Build notes
 
 - **Platforms:** Linux (x86_64, i686, ppc64le, riscv64, aarch64, armv7l), macOS (x86_64, aarch64), Windows (x86_64).
-- **Windows:** built via [Cosmopolitan](https://github.com/jart/cosmopolitan) (`cosmocc`, apelinked to a PE32+ `.exe`), not mingw — pv leans on the POSIX terminal/signal layer (termios, `SIGWINCH`, `poll`) that cosmo provides.
+- **Windows:** built via [Cosmopolitan](https://github.com/jart/cosmopolitan), not mingw — pv leans on the POSIX terminal/signal layer (termios, `SIGWINCH`, `poll`) that cosmo provides.
 - **Man pages:** embedded; read with `unpin man pv`.
