@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [v1.10.5-1] - 2026-06-16
+
 Initial release — `pv` 1.10.5 as a single self-contained binary, built
 natively for Linux, macOS, and Windows.
 
