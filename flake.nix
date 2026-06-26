@@ -18,6 +18,12 @@
     lib.mkStandaloneFlake {
       inherit self;
       name = "pv";
+
+      # Build via the unpin-llvm engine + emit a bitcode multicall module.
+      engine = "unpin-llvm";
+      multicall = {
+        programs = [{ name = "pv"; }];
+      };
       # `pv --version` → "pv 1.10.5\nCopyright … Andrew Wood\n…". Match the stable
       # author line rather than the version number (survives nixpkgs pv bumps).
       smoke = [ "--version" ];
