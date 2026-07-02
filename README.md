@@ -50,3 +50,4 @@ The [Releases](https://github.com/unpins/pv/releases) page has standalone binari
 - **Platforms:** Linux (x86_64, i686, ppc64le, riscv64, aarch64, armv7l), macOS (x86_64, aarch64), Windows (x86_64).
 - **Windows:** built via [Cosmopolitan](https://github.com/jart/cosmopolitan), not mingw — pv leans on the POSIX terminal/signal layer (termios, `SIGWINCH`, `poll`) that cosmo provides.
 - **Man pages:** embedded; read with `unpin man pv`.
+- **Tests:** pv's testsuite isn't wired — 47 of its 49 tests pass under static-musl, but the two `--remote` tests (one pv instance signalling another) fail in the build sandbox, which lacks the inter-process control path. The release smoke test exercises a pipe transfer instead.
