@@ -23,6 +23,14 @@
       engine = "unpin-llvm";
       multicall = {
         programs = [{ name = "pv"; }];
+        # pv is NLS-enabled, so it bakes its own $out/share/locale as the
+        # gettext domain directory. The standalone ships bin/ only, so that
+        # path is dead -- but Nix counted it as a runtime reference and dragged
+        # the base build, and through its compiler wrapper the toolchain,
+        # behind a self-contained binary. Scrubbing changes nothing at run time
+        # (gettext already fell through to the untranslated strings); it does
+        # not disable NLS, which stays compiled in for a future embedded catalog.
+        removeReferences = [ "pv-static" "pv-x86_64-unknown-cosmo" ];
       };
       # `pv --version` → "pv 1.10.5\nCopyright … Andrew Wood\n…". Match the stable
       # author line rather than the version number (survives nixpkgs pv bumps).
