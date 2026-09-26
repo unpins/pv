@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.10.5-2] - 2026-09-26
+
 ### Fixed
 
 - The binary no longer carries a leftover reference to a build-time path — a
