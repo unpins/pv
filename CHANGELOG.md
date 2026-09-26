@@ -12,7 +12,7 @@
 - Built by the same compiler as the rest of the catalog. The Linux x86_64
   binary grew from 210 KB to 283 KB; behaviour is unchanged.
 
-## [v1.10.5-1] - 2026-06-16
+## [1.10.5-1] - 2026-06-16
 
 Initial release — `pv` 1.10.5 as a single self-contained binary, built
 natively for Linux, macOS, and Windows.
